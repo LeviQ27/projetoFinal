@@ -1,0 +1,26 @@
+<div class="d-grid gap-2 col-6 mx-auto" *ngIf="this.escolhaDeNovaConta">
+    <button class="btn btn-success" type="button" (click)="this.cadastrarProfessor()">Nova conta do Professor</button>
+    <button class="btn btn-primary" type="button">Button</button>
+</div>
+
+<form [formGroup]="cadastroForm" *ngIf="this.professorCadastro">
+    <div class="row mb-3">
+        <label for="tx-nome" class="col-sm-2 col-form-label">Nome</label>
+        <div class="col-sm-10">
+          <input type="text" formControlName="nome" class="form-control" id="tx-nome">
+        </div>
+    </div>
+    <div class="row mb-3">
+      <label for="email" class="col-sm-2 col-form-label">Email</label>
+      <div class="col-sm-10">
+        <input type="email" formControlName="email" class="form-control" id="email">
+      </div>
+    </div>
+    <div class="row mb-3">
+      <label for="senha" class="col-sm-2 col-form-label">Senha</label>
+      <div class="col-sm-10">
+        <input type="password" formControlName="senha" class="form-control" id="senha">
+      </div>
+    </div>
+    <button type="button" class="btn btn-primary" (click)="this.cadastrar()">{{this.textoBotao}}</button>
+  </form>
